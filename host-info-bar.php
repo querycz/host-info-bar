@@ -43,9 +43,9 @@ function host_info_bar() {
 		echo '<span class="host-info-bar">';
 		echo '🛠 ' . $_SERVER['HTTP_HOST'];
 		echo ' &nbsp; ';
-		echo '🗄 ' . getenv( 'LOCAL_DB_NAME' );
+		echo '🗄 ' . DB_NAME;
 		echo '@';
-		echo getenv( 'LOCAL_DB_HOST' );
+		echo DB_HOST;
 		echo ' &nbsp; ❔ ';
 		echo get_num_queries().' queries' ;
 		echo ' &nbsp; ⏱ ';
