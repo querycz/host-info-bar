@@ -10,7 +10,7 @@
 
 function host_info_bar()
 {
-	if (substr($_SERVER['REMOTE_ADDR'], 0, 4) == '127.' || substr($_SERVER['REMOTE_ADDR'], 0, 4) == '172.' || $_SERVER['REMOTE_ADDR'] == '::1') { ?>
+	if (substr($_SERVER['REMOTE_ADDR'], 0, 4) == '127.' || substr($_SERVER['REMOTE_ADDR'], 0, 4) == '172.' || substr($_SERVER['REMOTE_ADDR'], 0, 4) == '192.' || $_SERVER['REMOTE_ADDR'] == '::1') { ?>
 		<style>
 			.host-info-bar {
 				font: 12px monospace;
