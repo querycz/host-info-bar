@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Host Info Bar
  * Description: Adds basic host info bar
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Query
  * Author uri: https://www.query.cz
  */
