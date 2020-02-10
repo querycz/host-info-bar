@@ -8,8 +8,9 @@
  * Author uri: https://www.query.cz
  */
 
-function host_info_bar() {
-	if ( substr( $_SERVER['REMOTE_ADDR'], 0, 4 ) == '127.' || $_SERVER['REMOTE_ADDR'] == '::1' ) { ?>
+function host_info_bar()
+{
+	if (substr($_SERVER['REMOTE_ADDR'], 0, 4) == '127.' || substr($_SERVER['REMOTE_ADDR'], 0, 4) == '172.' || $_SERVER['REMOTE_ADDR'] == '::1') { ?>
 		<style>
 			.host-info-bar {
 				font: 12px monospace;
@@ -17,7 +18,7 @@ function host_info_bar() {
 				position: fixed;
 				left: 0;
 				bottom: 0;
-				background: rgba(255,0,0,0.7);
+				background: rgba(255, 0, 0, 0.7);
 				padding: 2px 10px;
 				border-radius: 0 5px 0 0;
 				line-height: 2;
@@ -25,6 +26,7 @@ function host_info_bar() {
 				z-index: 100000;
 				text-align: left;
 			}
+
 			.host-info-bar-close {
 				cursor: pointer;
 				position: relative;
@@ -39,7 +41,7 @@ function host_info_bar() {
 				});
 			});
 		</script>
-	<?php
+<?php
 		echo '<span class="host-info-bar">';
 		echo '🛠 ' . $_SERVER['HTTP_HOST'];
 		echo ' &nbsp; ';
@@ -47,12 +49,12 @@ function host_info_bar() {
 		echo '@';
 		echo DB_HOST;
 		echo ' &nbsp; ❔ ';
-		echo get_num_queries().' queries' ;
+		echo get_num_queries() . ' queries';
 		echo ' &nbsp; ⏱ ';
 		timer_stop(1);
 		echo '<span class="host-info-bar-close">✖️</span>';
 		echo '</span>';
 	}
 }
-add_action( 'wp_footer', 'host_info_bar', 100 );
+add_action('wp_footer', 'host_info_bar', 100);
 // add_action( 'admin_footer', 'host_info_bar' );
