@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Host Info Bar
  * Description: Adds basic host info bar
- * Version: 1.0.4
+ * Version: 1.1.0
  * Author: Query
  * Author uri: https://www.query.cz
  */
@@ -48,7 +48,9 @@ function host_info_bar()
 		echo '🗄 ' . DB_NAME;
 		echo '@';
 		echo DB_HOST;
-		echo ' &nbsp; ❔ ';
+		echo ' &nbsp; ';
+		echo '🐘 ' . PHP_VERSION;
+		echo ' &nbsp; ❔';
 		echo get_num_queries() . ' queries';
 		echo ' &nbsp; ⏱ ';
 		timer_stop(1);
