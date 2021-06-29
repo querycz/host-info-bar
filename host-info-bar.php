@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Host Info Bar
  * Description: Adds basic host info bar
- * Version: 1.1.0
+ * Version: 1.2.0
  * Author: Query
  * Author uri: https://www.query.cz
  */
@@ -19,8 +19,8 @@ function host_info_bar()
 				left: 0;
 				bottom: 0;
 				background: rgba(255, 0, 0, 0.7);
-				padding: 2px 10px;
-				border-radius: 0 5px 0 0;
+				padding: 2px 32px 2px 8px;
+				border-radius: 0 8px 0 0;
 				line-height: 2;
 				letter-spacing: 1px;
 				z-index: 100000;
@@ -29,9 +29,9 @@ function host_info_bar()
 
 			.host-info-bar-close {
 				cursor: pointer;
-				position: relative;
+				position: absolute;
 				top: 2px;
-				margin-left: 20px;
+				right: 4px;
 			}
 		</style>
 		<script>
@@ -54,9 +54,11 @@ function host_info_bar()
 		echo get_num_queries() . ' queries';
 		echo ' &nbsp; ⏱ ';
 		timer_stop(1);
+		echo '<br>';
+		echo body_class();
 		echo '<span class="host-info-bar-close">✖️</span>';
 		echo '</span>';
 	}
 }
 add_action('wp_footer', 'host_info_bar', 100);
-// add_action( 'admin_footer', 'host_info_bar' );
+// add_action('admin_footer', 'host_info_bar');
